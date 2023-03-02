@@ -3,7 +3,6 @@ import os
 import discord
 from dotenv import load_dotenv
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from apscheduler.triggers.cron import CronTrigger
 from datetime import datetime
 import pytz
 import calendar
