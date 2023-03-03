@@ -24,7 +24,7 @@ async def send_msg_on_time():
 @client.event
 async def on_ready():
     global discord_channel
-    guild = discord.utils.get(client.guilds, name=GUILD)
+    guild = discord.utils.get(client.guilds, id=GUILD)
 
     discord_channel = guild.get_channel(CHANNEL) 
 
