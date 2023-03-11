@@ -14,12 +14,19 @@ CHANNEL = int(os.getenv('DISCORD_CHANNEL'))
 
 client = discord.Client(intents=discord.Intents.default())
 
+rating_scale_string = "Song Rating Scale:\n :pinchedfingers: = Already in playlist\n :pogandthenvomit: = Added to " \
+                      "playlist\n :puggers: = Great\n :pugde: = " \
+                      "Decent\n :honk: = Okay\n :perish: = Not a fan"
+
 async def send_msg_on_time():
     pst = pytz.timezone('America/Los_Angeles')
     now = datetime.now(pst)
     month_name = calendar.month_name[now.month]
     if now.hour == 0:
-        await discord_channel.create_thread(name=f"{month_name} {now.day}", type=discord.ChannelType.public_thread)
+        await discord_channel.send("Bumbling up some new bops... :bee: :point_down:")
+        new_thread = await discord_channel.create_thread(name=f"{month_name} {now.day}",
+                                                         type=discord.ChannelType.public_thread)
+        await new_thread.send(rating_scale_string)
 
 @client.event
 async def on_ready():
