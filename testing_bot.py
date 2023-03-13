@@ -16,9 +16,9 @@ CHANNEL = int(os.getenv('TEST_DISCORD_CHANNEL'))
 client = discord.Client(intents=discord.Intents.default())
 tree = app_commands.CommandTree(client)
 
-rating_scale_string = "Song Rating Scale:\n :pinched_fingers: = Already in playlist\n :pogandthenvomit: = Added to " \
-                      "playlist\n :puggers: = Great\n :pugde: = " \
-                      "Decent\n :honk: = Okay\n :perish: = Not a fan"
+rating_scale_string = "Song Rating Scale:\n :pinched_fingers: = Already in playlist\n <:pogandthenvomit:981790516704321536> = Added to " \
+                      "playlist\n <:puggers:834872002330099774> = Great\n <:pugde:981786329551601715> = " \
+                      "Decent\n <:honk:692203239730446389> = Okay\n <:perish:732352949824782417> = Not a fan"
 
 async def send_msg_on_time():
     pst = pytz.timezone('America/Los_Angeles')
