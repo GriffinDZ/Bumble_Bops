@@ -14,7 +14,7 @@ CHANNEL = int(os.getenv('DISCORD_CHANNEL'))
 
 client = discord.Client(intents=discord.Intents.default())
 
-rating_scale_string = "Song Rating Scale:\n :pinchedfingers: = Already in playlist\n :pogandthenvomit: = Added to " \
+rating_scale_string = "Song Rating Scale:\n :pinched_fingers: = Already in playlist\n :pogandthenvomit: = Added to " \
                       "playlist\n :puggers: = Great\n :pugde: = " \
                       "Decent\n :honk: = Okay\n :perish: = Not a fan"
 

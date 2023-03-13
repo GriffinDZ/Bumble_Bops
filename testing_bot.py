@@ -16,7 +16,7 @@ CHANNEL = int(os.getenv('TEST_DISCORD_CHANNEL'))
 client = discord.Client(intents=discord.Intents.default())
 tree = app_commands.CommandTree(client)
 
-rating_scale_string = "Song Rating Scale:\n :pinchedfingers: = Already in playlist\n :pogandthenvomit: = Added to " \
+rating_scale_string = "Song Rating Scale:\n :pinched_fingers: = Already in playlist\n :pogandthenvomit: = Added to " \
                       "playlist\n :puggers: = Great\n :pugde: = " \
                       "Decent\n :honk: = Okay\n :perish: = Not a fan"
 
@@ -47,8 +47,8 @@ async def on_ready():
 
     scheduler = AsyncIOScheduler()
     # scheduler.add_job(send_msg_on_time, trigger='interval', seconds=5)
-    # scheduler.add_job(send_msg_on_time)
+    scheduler.add_job(send_msg_on_time)
 
-    #scheduler.start()
+    scheduler.start()
 
 client.run(TOKEN)
